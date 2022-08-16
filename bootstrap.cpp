@@ -756,6 +756,21 @@ static int init_hook()
 	HOOK("libunity.so", lseek);
 	HOOK("libunity.so", lseek64);
 	HOOK("libunity.so", close);
+
+	//uwa热更
+	HOOK("libuwa.so", fopen);
+	HOOK("libuwa.so", fseek);
+	HOOK("libuwa.so", ftell);
+	HOOK("libuwa.so", fread);
+	HOOK("libuwa.so", fgets);
+	HOOK("libuwa.so", fclose);
+	HOOK("libuwa.so", stat);
+	HOOK("libuwa.so", dlopen);
+	HOOK("libuwa.so", open);
+	HOOK("libuwa.so", read);
+	HOOK("libuwa.so", lseek);
+	HOOK("libuwa.so", lseek64);
+	HOOK("libuwa.so", close);
 	
 	if(0 != xhook_refresh(1)){
 		MY_ERROR("failed to find replace function"); 
